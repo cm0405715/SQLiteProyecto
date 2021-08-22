@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:SQLiteProyecto.ViewModels"
+             x:Class="SQLiteProyecto.Views.InsertarEmpleado">
+    <ContentPage.BindingContext>
+        <vm:EmpleadoModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Margin="10">
+            <Label Text="INSERTAR EMPLEADO"
+                   TextColor="Red"
+                   FontSize="30"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Entry Text="{Binding Empleado.Nombre}" Placeholder="Nombre.." HorizontalOptions="FillAndExpand"></Entry>
+            <Entry Text="{Binding Empleado.Apellidos}" Placeholder="Apellidos.." HorizontalOptions="FillAndExpand"></Entry>
+            <Entry Text="{Binding Empleado.Edad}" Placeholder="Edad.." HorizontalOptions="FillAndExpand"></Entry>
+            <Picker x:Name="pickerSexo"
+                SelectedItem="{Binding Empleado.Sexo}"
+                Title="Seleccione sexo"
+                TitleColor="Green">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Masculino</x:String>
+                        <x:String>Femenino</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Entry Text="{Binding Empleado.Direccion}" Placeholder="Direccion.." HorizontalOptions="FillAndExpand"></Entry>
+            <Entry Text="{Binding Empleado.Telefono}" Placeholder="Telefono.." HorizontalOptions="FillAndExpand"></Entry>
+
+            <Button Text="Guardar" HorizontalOptions="FillAndExpand" Command="{Binding InsertarEmpleado}"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

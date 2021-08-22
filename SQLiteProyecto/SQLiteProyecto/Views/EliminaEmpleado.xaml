@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLiteProyecto.Views.EliminaEmpleado">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Margin="10">
+            <Label Text="ELIMINAR EMPLEADO"
+                   TextColor="Red"
+                   FontSize="30"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="{Binding Empleado.IdEmpleado, StringFormat='ID: {0}'}" HorizontalOptions="FillAndExpand"></Label>
+            <Label Text="{Binding Empleado.Nombre, StringFormat='NOMBRE: {0}'}" HorizontalOptions="FillAndExpand"></Label>
+            <Label Text="{Binding Empleado.Apellidos, StringFormat='APELLIDOS: {0}'}" HorizontalOptions="FillAndExpand"></Label>
+            <Label Text="{Binding Empleado.Edad, StringFormat='EDAD: {0}'}" HorizontalOptions="FillAndExpand"></Label>
+            <Label Text="{Binding Empleado.Sexo, StringFormat='SEXO: {0}'}" HorizontalOptions="FillAndExpand"></Label>
+            <Label Text="{Binding Empleado.Direccion, StringFormat='DIRECCION: {0}'}" HorizontalOptions="FillAndExpand"></Label>
+            <Label Text="{Binding Empleado.Telefono, StringFormat='TELEFONO: {0}'}" HorizontalOptions="FillAndExpand"></Label>
+
+            <Button Text="ELIMINAR" HorizontalOptions="FillAndExpand" 
+                    Command="{Binding EliminarEmpleado}" TextColor="Red"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

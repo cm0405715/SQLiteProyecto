@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:SQLiteProyecto.ViewModels"
+             x:Class="SQLiteProyecto.Views.EmpleadosView">
+
+    <ContentPage.BindingContext>
+        <vm:EmpleadosViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Margin="10">
+            <Label Text="LISTA DE EMPLEADOS"
+                   FontSize="25"
+                   TextColor="Green"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <ScrollView>
+                <ListView ItemsSource="{Binding Empleados}" RowHeight="200">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="{Binding IdEmpleado, StringFormat='ID: {0}'}"></Label>
+                                    <Label Text="{Binding Nombre, StringFormat='NOMBRE: {0}'}"></Label>
+                                    <Label Text="{Binding Apellidos, StringFormat='APELLIDOS: {0}'}"></Label>
+                                    <Label Text="{Binding Edad, StringFormat='EDAD: {0}'}"></Label>
+                                    <Label Text="{Binding Sexo, StringFormat='SEXO: {0}'}"></Label>
+                                    <Label Text="{Binding Direccion, StringFormat='DIRECCION: {0}'}"></Label>
+                                    <Label Text="{Binding Telefono, StringFormat='TELEFONO: {0}'}"></Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    
